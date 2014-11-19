@@ -2,12 +2,14 @@
 //////////////////////////////
 //    Collatz class         //
 //////////////////////////////
+#include<boost/multiprecision/cpp_int.hpp>
+namespace mp = boost::multiprecision;
 
 class Collatz {
   private:
-    unsigned int init_num;
-    unsigned int nextResult(unsigned int num);
+    mp::cpp_int init_num;
+    mp::cpp_int nextResult(mp::cpp_int num);
   public:
-    Collatz(unsigned int num);
+    Collatz(mp::cpp_int num);
     void show();
 };

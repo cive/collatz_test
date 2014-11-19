@@ -1,9 +1,12 @@
 #include"collatz.h"
+#include<iostream>
 #include<stdio.h>
-Collatz::Collatz(unsigned int num) : init_num(num) {
+using namespace std;
+
+Collatz::Collatz(mp::cpp_int num) : init_num(num) {
   if(num < 1)init_num = 1;
 };
-unsigned int Collatz::nextResult(unsigned int num) {
+mp::cpp_int Collatz::nextResult(mp::cpp_int num) {
   if(num%2 == 0) {
     return num/2;
   } else {
@@ -11,13 +14,13 @@ unsigned int Collatz::nextResult(unsigned int num) {
   }
 };
 void Collatz::show() {
-  unsigned int count = 0;
-  unsigned int n = init_num;
-  printf("%u", n);
+  mp::cpp_int count = 0;
+  mp::cpp_int n = init_num;
+  cout << n;
   while(n != 1) {
     count++;
     n = nextResult(n);
-    printf(" -> %u", n);
+    cout << " -> " << n;
   }
   printf("\n");
 };
